@@ -1,0 +1,85 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "splatfold"
+dynamic = ["version"]
+description = "Fold local Python wildcard imports into one standalone source file."
+readme = "readme.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["bundler", "include", "preprocessor", "single-file", "source-code"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Code Generators",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9"]
+dev = [
+    "coverage[toml]>=7.6,<8",
+    "mypy>=1.14,<1.19",
+    "pytest>=8,<9",
+    "ruff>=0.9",
+]
+release = [
+    "build>=1.2",
+    "check-wheel-contents>=0.6,<1",
+    "packaging>=24.2",
+    "twine>=6",
+    "validate-pyproject>=0.24",
+]
+
+[project.scripts]
+splatfold = "splatfold:main"
+
+[project.urls]
+Homepage = "https://github.com/WithSofie/splatfold"
+Repository = "https://github.com/WithSofie/splatfold"
+Issues = "https://github.com/WithSofie/splatfold/issues"
+Changelog = "https://github.com/WithSofie/splatfold/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+py-modules = ["splatfold"]
+
+[tool.setuptools.dynamic]
+version = {attr = "splatfold.VERSION"}
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-config --strict-markers"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["splatfold"]
+
+[tool.coverage.report]
+fail_under = 90
+precision = 2
+show_missing = true
+skip_covered = true
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["B", "E4", "E7", "E9", "F", "I", "PIE", "RUF", "UP"]
+
+[tool.mypy]
+python_version = "3.9"
+strict = true

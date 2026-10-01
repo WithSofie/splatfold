@@ -1,0 +1,9 @@
+include CHANGELOG.md
+include CONTRIBUTING.md
+include DESIGN.md
+include LICENSE
+include MIGRATING.md
+include RELEASING.md
+include SECURITY.md
+include readme.md
+recursive-include tests *.py
