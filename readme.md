@@ -1,3 +1,5 @@
+# SplatFold
+
 ![](splatfold.logo.png)
 
 **Splatfold** is a single-file Python source preprocessor. It gives local
