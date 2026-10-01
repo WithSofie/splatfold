@@ -1,4 +1,4 @@
-# Splatfold User Manual
+![](splatfold.logo.png)
 
 **Splatfold** is a single-file Python source preprocessor. It gives local
 wildcard imports an additional build-time meaning while keeping the development
