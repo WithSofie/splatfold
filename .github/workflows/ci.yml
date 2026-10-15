@@ -89,7 +89,7 @@ jobs:
           /tmp/splatfold-wheel/bin/splatfold --version
           /tmp/splatfold-wheel/bin/python -c "import pathlib, splatfold; assert pathlib.Path(splatfold.__file__).is_relative_to('/tmp/splatfold-wheel')"
           /tmp/splatfold-wheel/bin/python -c "import importlib.metadata, splatfold; assert importlib.metadata.version('splatfold') == splatfold.__version__"
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: distributions
           path: dist/
